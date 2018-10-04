@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info">
+
+    <id>digger:cache_stats</id>
+    <name>Cache Stats</name>
+    <type>modification</type>
+    <version>1.0 beta 1</version>
+
+    <install for="2.0 - 2.0.99">
+        <readme>README.md</readme>
+        <require-dir name="Sources" destination="$boarddir"/>
+        <require-dir name="Themes" destination="$boarddir"/>
+        <database>hooks.php</database>
+        <redirect url="?action=admin;area=serversettings;sa=cache" timeout="5000"/>
+    </install>
+
+    <uninstall for="2.0 - 2.0.99">
+        <remove-dir name="$languagedir/CacheStats"/>
+        <remove-file name="$sourcedir/Mod-CacheStats.php"/>
+        <remove-file name="$sourcedir/Class-CacheStats.php"/>
+        <code>hooks.php</code>
+    </uninstall>
+
+</package-info>
