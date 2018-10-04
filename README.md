@@ -1,4 +1,4 @@
-[![GitHub release](https://img.shields.io/github/release/realdigger/SMF-Cache-Stats.svg)]()
+[![GitHub release](https://img.shields.io/github/release/realdigger/SMF-Cache-Stats.svg)](https://github.com/realdigger/SMF-Cache-Stats/releases)
 [![Build Status](https://travis-ci.org/realdigger/SMF-Cache-Stats.svg?branch=master)](https://travis-ci.org/realdigger/SMF-Cache-Stats)
 [![SMF](https://img.shields.io/badge/SMF-2.0-blue.svg?style==flat)](https://simplemachines.org)
 [![Hooks](https://img.shields.io/badge/hooks%20only-✓-blue.svg?style==flat)]()
