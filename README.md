@@ -1,5 +1,11 @@
-# SMF Cache Stats
-* **Author:** digger [https://mysmf.net](http://mysmf.net)
+[![GitHub release](https://img.shields.io/github/release/realdigger/SMF-Cache-Stats.svg)]()
+[![Build Status](https://travis-ci.org/realdigger/SMF-Cache-Stats.svg?branch=master)](https://travis-ci.org/realdigger/SMF-Cache-Stats)
+[![SMF](https://img.shields.io/badge/SMF-2.0-blue.svg?style==flat)](https://simplemachines.org)
+[![Hooks](https://img.shields.io/badge/hooks%20only-✓-blue.svg?style==flat)]()
+[![license](https://img.shields.io/github/license/realdigger/SMF-Cache-Stats.svg)]()
+
+# SMF Cache Stats [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=SMF%20Cache%20Stats&url=https://github.com/realdigger/SMF-Chache-Stats&hashtags=smf)
+* **Author:** digger [https://mysmf.net](https://mysmf.net)
 * **License:** The MIT License (MIT) https://opensource.org/licenses/MIT
 * **Compatible with:** SMF 2.0
 * **Hooks only:** Yes
