@@ -57,7 +57,7 @@ function replaceBufferCacheStats($buffer)
 
 /**
  * Add mod admin area
- * @param $admin_areas
+ * @return bool
  */
 function viewCacheStats()
 {
@@ -79,11 +79,13 @@ function viewCacheStats()
         return false;
     }
 
-    $cacheStats = new CacheStats('memcached');
-    $cacheStats->memcacheServers = $modSettings['cache_memcached'];
+    if (!empty($modSettings['cache_memcached'])) {
+        $cacheStats = new CacheStats('memcached');
+        $cacheStats->memcacheServers = $modSettings['cache_memcached'];
 
-    if (!$cacheStats->getStats()) {
-        return false;
+        if (!$cacheStats->getStats()) {
+            return false;
+        }
     }
 
     $context['cacheStatsBuffer'] .= prepareCacheStatsInfo($cacheStats->stats, $cacheStats->cache);
