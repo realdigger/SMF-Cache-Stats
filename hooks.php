@@ -12,7 +12,7 @@ global $context, $user_info;
 
 $hooks = array(
     'integrate_pre_include' => '$sourcedir/Mod-CacheStats.php',
-    'integrate_pre_load' => 'loadCacheStatsHooks'
+    'integrate_pre_load'    => 'loadCacheStatsHooks'
 );
 
 if (file_exists(dirname(__FILE__) . '/SSI.php') && !defined('SMF')) {

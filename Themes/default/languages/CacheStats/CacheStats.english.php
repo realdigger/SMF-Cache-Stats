@@ -8,13 +8,16 @@
  * @version 1.0
  */
 
-$txt['cache_stats_version'] = 'Version';
-$txt['cache_stats_maxbytes'] = 'Memory Limit';
-$txt['cache_stats_bytes'] = 'Memory Used';
+$txt['cache_stats_version']     = 'Version';
+$txt['cache_stats_maxbytes']    = 'Memory Limit';
+$txt['cache_stats_bytes']       = 'Memory Used';
 $txt['cache_stats_connections'] = 'Connections';
-$txt['cache_stats_items'] = 'Items';
-$txt['cache_stats_hits'] = 'Hits';
-$txt['cache_stats_miss'] = 'Misses';
+$txt['cache_stats_items']       = 'Items';
+$txt['cache_stats_hits']        = 'Hits';
+$txt['cache_stats_miss']        = 'Misses';
+$txt['cache_stats_keys']        = 'Keys';
+$txt['cache_stats_scripts']     = 'Scripts';
 
-$txt['cache_stats_keys'] = 'Keys';
-$txt['cache_stats_scripts'] = 'Scripts';
+$txt['cache_stats_num_slots']  = 'Slots';
+$txt['cache_stats_ttl']        = 'TTL';
+$txt['cache_stats_start_time'] = 'Started';

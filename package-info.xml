@@ -5,7 +5,7 @@
     <id>digger:cache_stats</id>
     <name>Cache Stats</name>
     <type>modification</type>
-    <version>1.0 beta 1</version>
+    <version>1.0 beta 2</version>
 
     <install for="2.0 - 2.0.99">
         <readme>README.md</readme>

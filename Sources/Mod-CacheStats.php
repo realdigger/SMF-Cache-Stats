@@ -3,7 +3,7 @@
  * @package SMF Cache Stats
  * @file Mod-CacheStats.php
  * @author digger <digger@mysmf.net> <http://mysmf.net>
- * @copyright Copyright (c) 2017, digger
+ * @copyright Copyright (c) 2017-2018, digger
  * @license The MIT License (MIT) https://opensource.org/licenses/MIT
  * @version 1.0
  */
@@ -48,9 +48,11 @@ function replaceBufferCacheStats($buffer)
         return $buffer;
     }
 
-    $buffer = str_replace('<hr class="hrcolor clear" />',
+    $buffer = str_replace(
+        '<hr class="hrcolor clear" />',
         '<hr class="hrcolor clear" />' . $context['cacheStatsBuffer'] . '<hr class="hrcolor clear" />',
-        $buffer);
+        $buffer
+    );
 
     return $buffer;
 }
@@ -59,6 +61,7 @@ function replaceBufferCacheStats($buffer)
  * Add mod admin area
  * @return bool
  */
+
 function viewCacheStats()
 {
     global $sourcedir, $context, $modSettings;
@@ -75,46 +78,16 @@ function viewCacheStats()
 
     $context['cacheStatsBuffer'] = prepareCacheStatsInfo($opcacheStats->stats, $opcacheStats->cache);
 
-    if (empty($modSettings['cache_enable'])) {
+    $cacheStats = new CacheStats();
+
+    if (!$cacheStats->getStats()) {
         return false;
-    }
-
-    if (!empty($modSettings['cache_memcached'])) {
-        $cacheStats = new CacheStats('memcached');
-        $cacheStats->memcacheServers = $modSettings['cache_memcached'];
-
-        if (!$cacheStats->getStats()) {
-            return false;
-        }
     }
 
     $context['cacheStatsBuffer'] .= prepareCacheStatsInfo($cacheStats->stats, $cacheStats->cache);
 
-    unset($cacheStats);
+    unset($opcacheStats, $cacheStats);
     return true;
-
-    /*
-
-       ["cache_enable"
-
-        // Detect an optimizer?
-        if (function_exists('eaccelerator_put'))
-            $detected = 'eAccelerator';
-        elseif (function_exists('mmcache_put'))
-            $detected = 'MMCache';
-        elseif (function_exists('apc_store'))
-            $detected = 'APC';
-        elseif (function_exists('output_cache_put'))
-            $detected = 'Zend';
-        elseif (function_exists('memcache_set'))
-            $detected = 'Memcached';
-        elseif (function_exists('xcache_set'))
-            $detected = 'XCache';
-        else
-            $detected = 'no_caching';
-
-        $context['settings_message'] = sprintf($context['settings_message'], $txt['detected_' . $detected]);
-    */
 }
 
 /**
@@ -125,6 +98,6 @@ function addCacheStatsCopyright()
     global $context;
 
     if ($context['current_action'] == 'credits') {
-        $context['copyrights']['mods'][] = '<a href="https://mysmf.net/mods/cache-stats" target="_blank">Cache Stats</a> &copy; 2017-2018, digger';
+        $context['copyrights']['mods'][] = '<a href="https://mysmf.net/mods/cache-stats" target="_blank">Cache Stats</a> &copy; 2017-2021, digger';
     }
 }
